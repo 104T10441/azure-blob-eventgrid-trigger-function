@@ -1,0 +1,31 @@
+{
+    "version": "2.0",
+    "functionTimeout": "00:05:00",
+    "aggregator": {
+        "batchSize": 1000,
+        "flushTimeout": "00:00:30"
+    },
+    "extensions": {
+        "http": {
+            "routePrefix": "",
+            "maxConcurrentRequests": 100,
+            "dynamicThrottlesEnabled": true
+        }
+    },
+    "logging": {
+        "logLevel": {
+            "default": "Information"
+        },
+        "applicationInsights": {
+            "enableLiveMetrics": true,
+            "samplingSettings": {
+                "isEnabled": true,
+                "maxTelemetryItemsPerSecond": 20
+            }
+        }
+    },
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[3.3.0, 4.0.0)"
+    }
+}
